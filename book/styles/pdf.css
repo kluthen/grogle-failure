@@ -1,0 +1,161 @@
+/* =========================================================
+   Grogle Failure — style PDF (WeasyPrint)
+   ========================================================= */
+
+@page {
+  size: A5;
+  margin: 2.2cm 2cm 2.5cm 2cm;
+
+  @bottom-center {
+    content: counter(page);
+    font-family: "DejaVu Sans", sans-serif;
+    font-size: 9pt;
+    color: #888;
+  }
+}
+
+/* Première page : pas de numéro */
+@page :first {
+  @bottom-center { content: ""; }
+}
+
+/* --- Typographie de base --- */
+body {
+  font-family: "DejaVu Serif", "Georgia", serif;
+  font-size: 10.5pt;
+  line-height: 1.65;
+  color: #111;
+  hyphens: auto;
+}
+
+/* --- Titres séquences (H1) --- */
+h1 {
+  font-size: 16pt;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+  padding: 1.5em 0 0.6em;
+  page-break-before: always;
+  border-bottom: 0.5pt solid #aaa;
+}
+
+/* --- Titres logs (H2) --- */
+h2 {
+  font-size: 12pt;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+  padding: 2em 0 1.2em;
+  page-break-before: always;
+}
+
+/* --- Paragraphes narratifs --- */
+p {
+  margin: 0;
+  text-indent: 1.4em;
+  orphans: 3;
+  widows: 3;
+}
+
+h1 + p, h2 + p, h3 + p,
+blockquote + p {
+  text-indent: 0;
+}
+
+/* --- Page de garde --- */
+.title-page {
+  page-break-after: always;
+  text-align: center;
+  padding-top: 35%;
+}
+
+.title-page h1 {
+  font-size: 24pt;
+  border: none;
+  page-break-before: auto;
+  padding-bottom: 0.2em;
+  margin-bottom: 0.2em;
+}
+
+.title-page .subtitle {
+  font-size: 14pt;
+  color: #555;
+}
+
+.title-page .author {
+  margin-top: 2em;
+  font-size: 12pt;
+}
+
+/* --- Messages IM ---
+   ***Nom (infos)*** → <strong><em>…</em></strong> dans un <p>   */
+
+p > strong > em,
+p > em > strong {
+  display: block;
+  font-family: "DejaVu Sans Mono", "Courier New", monospace;
+  font-size: 8pt;
+  font-style: normal;
+  font-weight: bold;
+  color: #444;
+  background: #efefef;
+  border-left: 2pt solid #888;
+  padding: 2pt 6pt;
+  margin: 8pt 0 0;
+  text-indent: 0;
+}
+
+/* Corps du message IM */
+blockquote {
+  margin: 0 0 6pt 0;
+  padding: 3pt 8pt;
+  border-left: 2pt solid #bbb;
+  background: #fafafa;
+  font-size: 9.5pt;
+  color: #333;
+}
+
+blockquote p {
+  margin: 1pt 0;
+  text-indent: 0;
+}
+
+/* Stats litRPG */
+blockquote blockquote {
+  border-left: 1.5pt solid #999;
+  background: #f3f3f3;
+  font-family: "DejaVu Sans Mono", "Courier New", monospace;
+  font-size: 8.5pt;
+}
+
+/* --- Italiques --- */
+em { font-style: italic; }
+
+/* --- Séparateurs --- */
+hr {
+  border: none;
+  border-top: 0.4pt solid #ccc;
+  margin: 1.2em auto;
+  width: 35%;
+}
+
+/* --- Table des matières --- */
+#TOC {
+  page-break-after: always;
+}
+
+#TOC ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#TOC li {
+  margin: 0.35em 0;
+  font-size: 10pt;
+}
+
+#TOC li li {
+  padding-left: 1.2em;
+  font-size: 9pt;
+  color: #555;
+}

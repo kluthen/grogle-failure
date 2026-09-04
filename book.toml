@@ -1,0 +1,91 @@
+# Configuration du livre — Grogle Failure
+# Éditer ce fichier avant de générer les sorties.
+
+# ---------------------------------------------------------------------------
+# Métadonnées communes
+# ---------------------------------------------------------------------------
+[book]
+series  = "Grogle Failure"
+volume  = 1
+
+# Répertoire de sortie (relatif à la racine du projet)
+output_dir = "book/output"
+
+# Dossier des covers (générés automatiquement si absent)
+covers_dir = "book/covers"
+
+# Dossier des styles CSS
+styles_dir = "book/styles"
+
+# ---------------------------------------------------------------------------
+# Version française
+# ---------------------------------------------------------------------------
+[fr]
+title    = "Grogle Failure"
+subtitle = "Livre 1"
+author   = "Bastien Barcaioni"   # ou votre pseudonyme
+language = "fr"
+drafts   = "drafts/fr"
+
+description = """
+Un jeune homme sans avenir se retrouve au cœur d'une apocalypse silencieuse —
+la mise à jour qui a tout brisé, et la ruche qui s'éveille sous sa peau.
+"""
+
+# Noms affichés des séquences dans la table des matières
+[fr.sequences]
+"Séquence 1" = "Séquence 1 — L'Effondrement"
+"Séquence 2" = "Séquence 2 — La Fuite"
+"Séquence 3" = "Séquence 3 — L'Infiltration"
+"Séquence 4" = "Séquence 4 — La Surface"
+"Séquence 5" = "Séquence 5 — La Descente"
+
+# ---------------------------------------------------------------------------
+# Version anglaise
+# ---------------------------------------------------------------------------
+[en]
+title    = "Grogle Failure"
+subtitle = "Book 1"
+author   = "Bastien Barcaioni"
+language = "en"
+drafts   = "drafts/en"
+
+description = """
+A young man with no future finds himself at the heart of a silent apocalypse —
+the update that broke everything, and the hive awakening beneath his skin.
+"""
+
+[en.sequences]
+"Sequence 1" = "Sequence 1 — The Collapse"
+"Sequence 2" = "Sequence 2 — The Flight"
+"Sequence 3" = "Sequence 3 — The Infiltration"
+"Sequence 4" = "Sequence 4 — The Surface"
+"Sequence 5" = "Sequence 5 — The Descent"
+
+# ---------------------------------------------------------------------------
+# Chapitres spéciaux (IDs non-numériques)
+# Valeur = position de tri (ex : 27.5 → entre Log #27 et Log #28)
+# ---------------------------------------------------------------------------
+[special_chapters]
+"A" = 27.5
+
+# ---------------------------------------------------------------------------
+# Licence
+# ---------------------------------------------------------------------------
+# Options courantes :
+#   "All Rights Reserved"   — tous droits réservés (défaut commercial)
+#   "CC BY 4.0"             — partage libre avec attribution
+#   "CC BY-NC 4.0"          — idem, usage non-commercial seulement
+#   "CC BY-NC-ND 4.0"       — partage autorisé, pas de modif, pas de commerce
+#                             (recommandé pour la fiction auto-publiée)
+#   "CC BY-NC-SA 4.0"       — partage autorisé (Share-Alike), non-commercial
+[license]
+type = "CC BY-NC-ND 4.0"
+year = 2026
+url  = "https://creativecommons.org/licenses/by-nc-nd/4.0/"
+
+# Texte affiché dans la page de garde (fr)
+text_fr = "Cette œuvre est mise à disposition selon les termes de la Licence Creative Commons Attribution — Pas d'Utilisation Commerciale — Pas de Modification 4.0 International."
+
+# Texte affiché dans la page de garde (en)
+text_en = "This work is licensed under the Creative Commons Attribution–NonCommercial–NoDerivatives 4.0 International License."

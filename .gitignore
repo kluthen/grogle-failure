@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+.python-version
+
+# Build outputs (PDF / EPUB)
+book/output/
+
+# Watson worldbuilding DB (local, regenerable state)
+.watson/graph.sqlite*
+.watson/vec.sqlite*
+.watson/scrap_index.sqlite*
+.watson/mcp.log
+
+# Claude Code local settings
+.claude/settings.local.json
+
+# Editor
+.vscode/
+*.swp
+
+# OS
+.DS_Store

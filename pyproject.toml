@@ -1,0 +1,16 @@
+[project]
+name = "grogle-failure-build"
+version = "0.1.0"
+description = "Build pipeline — Grogle Failure (PDF / EPUB)"
+requires-python = ">=3.11"
+dependencies = [
+    "weasyprint>=62.0",
+    "pillow>=11.0",
+    "pyyaml>=6.0",
+]
+
+[dependency-groups]
+dev = []
+
+[project.scripts]
+build = "build_book:main"

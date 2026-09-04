@@ -1,0 +1,144 @@
+/* =========================================================
+   Grogle Failure — style EPUB
+   ========================================================= */
+
+/* --- Typographie de base --- */
+body {
+  font-family: "Georgia", "DejaVu Serif", serif;
+  font-size: 1em;
+  line-height: 1.7;
+  color: #1a1a1a;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Titres (séquences H1, logs H2) --- */
+h1 {
+  font-family: "Georgia", "DejaVu Serif", serif;
+  font-size: 1.6em;
+  font-weight: bold;
+  text-align: center;
+  margin: 3em 0 1em;
+  page-break-before: always;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.4em;
+}
+
+h2 {
+  font-family: "Georgia", "DejaVu Serif", serif;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+  margin: 2.5em 0 1.5em;
+  page-break-before: always;
+}
+
+/* --- Page de garde (classe appliquée dans le template) --- */
+.title-page {
+  text-align: center;
+  margin-top: 30%;
+}
+
+.title-page h1 {
+  font-size: 2em;
+  border: none;
+  margin: 0.2em 0;
+}
+
+/* --- Paragraphes narratifs --- */
+p {
+  margin: 0;
+  text-indent: 1.5em;
+}
+
+/* Premier paragraphe après un titre : pas d'indent */
+h1 + p,
+h2 + p,
+h3 + p {
+  text-indent: 0;
+}
+
+/* --- Messages IM ---
+   Format : ***Nom (infos)*** sur une ligne seule, suivi d'un blockquote.
+   Le pandoc rend ***x*** en <strong><em>x</em></strong>.
+   On identifie les headers IM par leur contexte structurel.        */
+
+/* Header IM : strong > em en début de paragraphe */
+p > strong > em,
+p > em > strong {
+  display: block;
+  font-family: "DejaVu Sans Mono", "Courier New", monospace;
+  font-size: 0.78em;
+  font-style: normal;
+  font-weight: bold;
+  color: #444;
+  background: #f0f0f0;
+  border-left: 3px solid #888;
+  padding: 0.3em 0.6em;
+  margin: 1.2em 0 0;
+  text-indent: 0;
+}
+
+/* Corps du message IM : blockquote immédiatement après */
+blockquote {
+  margin: 0 0 1em 0;
+  padding: 0.4em 0.8em;
+  border-left: 3px solid #bbb;
+  background: #fafafa;
+  font-size: 0.92em;
+  color: #333;
+}
+
+blockquote p {
+  margin: 0.2em 0;
+  text-indent: 0;
+}
+
+/* Blocs de stats litRPG (blockquote dans un blockquote IM) */
+blockquote blockquote {
+  border-left: 2px solid #999;
+  background: #f5f5f5;
+  font-family: "DejaVu Sans Mono", "Courier New", monospace;
+  font-size: 0.85em;
+  color: #222;
+  margin: 0.4em 0 0;
+}
+
+/* --- Italiques narratifs --- */
+em {
+  font-style: italic;
+}
+
+/* --- Sauts de section (--- en markdown) --- */
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 2em auto;
+  width: 40%;
+}
+
+/* --- Table des matières (générée par pandoc) --- */
+#TOC {
+  page-break-after: always;
+  margin: 2em 0;
+}
+
+#TOC ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#TOC li {
+  margin: 0.4em 0;
+}
+
+#TOC a {
+  color: #333;
+  text-decoration: none;
+}
+
+#TOC li li {
+  padding-left: 1.5em;
+  font-size: 0.9em;
+  color: #555;
+}

@@ -1,0 +1,66 @@
+[project]
+name        = "Groogle Failure"
+source_dir  = "."
+
+[ingest]
+chunk_size_tokens    = 512
+chunk_overlap_tokens = 64
+
+[language]
+code = "fr"
+
+[graph]
+path = ".watson/graph.sqlite"
+
+[vector]
+path = ".watson/vec.sqlite"
+
+# ---------------------------------------------------------------------------
+# Model providers — point base_url at your Ollama or OpenAI-compatible server.
+# ---------------------------------------------------------------------------
+
+[[models.providers]]
+  name     = "local"
+  base_url = "http://localhost:11434"
+
+# ---------------------------------------------------------------------------
+# Worker LLM (used by explore / crawl sub-agents).
+# ---------------------------------------------------------------------------
+
+[[models.workers]]
+  model    = "llama3.1:8b"
+  provider = "local"
+  priority = 1
+
+# ---------------------------------------------------------------------------
+# Embed model (used by ingest and vector search).
+# ---------------------------------------------------------------------------
+
+[[models.embed]]
+  model    = "nomic-embed-text"
+  provider = "local"
+  priority = 1
+
+# ---------------------------------------------------------------------------
+# Bucket definitions.
+# ---------------------------------------------------------------------------
+
+[categories.book]
+path_patterns = ["book/"]
+weight        = 2.0
+read_only     = true
+
+[categories.world]
+path_patterns = ["world/"]
+weight        = 1.6
+read_only     = false
+
+[categories.drafts]
+path_patterns = ["drafts/"]
+weight        = 1.8
+read_only     = false
+
+[[categories.scraps]]
+path_patterns = ["scraps/"]
+weight        = 1.8
+default       = true
